@@ -1,4 +1,4 @@
-sinon-mocha-embedded
+mocha-sinon
 ====================
 
-Integration between sinon and mocha, allowing for automatic cleanup of spies
+Integration between mocha and sinon, allowing for automatic cleanup of spies
