@@ -1,8 +1,8 @@
 testwatch:
-	./node_modules/.bin/nodemon -L -d 0 -w . --exec make test
+	./node_modules/.bin/mocha --recursive -R list -w
 
 test:
-	./node_modules/.bin/mocha --recursive -C
+	./node_modules/.bin/mocha --recursive -R list
 
 clean:
 	rm -rf node_modules
