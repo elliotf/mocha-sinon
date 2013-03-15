@@ -1,6 +1,6 @@
 {
   "name": "mocha-sinon",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "keywords": [
     "mocha",
     "sinon",
@@ -22,6 +22,6 @@
   },
   "dependencies": {
     "mocha": "~1.8.1",
-    "sinon": "~1.5.2"
+    "sinon": "~1.6"
   }
 }
