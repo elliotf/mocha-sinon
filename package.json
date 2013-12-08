@@ -1,6 +1,6 @@
 {
   "name": "mocha-sinon",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "keywords": [
     "mocha",
     "sinon",
@@ -18,10 +18,15 @@
   "author": "Elliot Foster",
   "license": "MIT",
   "devDependencies": {
-    "chai": "~1.4.2"
+    "chai": "~1",
+    "mocha": "~1",
+    "sinon": "~1"
   },
-  "dependencies": {
-    "mocha": "~1.8.1",
-    "sinon": "~1.6"
+  "peerDependencies": {
+    "mocha": "~1",
+    "sinon": "~1"
+  },
+  "engines": {
+    "npm": ">1.2"
   }
 }
