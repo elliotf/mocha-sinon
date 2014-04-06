@@ -29,6 +29,20 @@ or, on your command line calling mocha:
 $ mocha -R mocha-sinon test.js
 ```
 
+#### Using mocha's flakey --watch flag
+
+For background, please see [issue #1](https://github.com/elliotf/mocha-sinon/issues/1) on this project.
+
+If you use mocha's [flakey watch flag](https://github.com/visionmedia/mocha/pull/266), there is experimental support for it.  Note that the first method of requiring the mocha-sinon is the best way to do it.
+
+You can put the following block in your spec helper and it might work:
+
+```javascript
+require('mocha-sinon')();
+```
+
+Note that the difference between this method and the first method is that this is calling mocha-sinon's exported function.
+
 ### Browser-side
 
 Source the mocha-sinon file after you have sourced mocha and sinon, and it will "do the right thing"
