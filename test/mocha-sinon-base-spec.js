@@ -1,4 +1,4 @@
-(function(test){
+((function(test){
   if (
     typeof require === "function"
     && typeof exports === "object"
@@ -6,16 +6,18 @@
   ) {
     // NodeJS
     (function(){
-      var chai = require('chai');
-      require('../mocha-sinon');
-      test(chai, true);
+      var chai    = require('chai');
+      var subject = require('../mocha-sinon');
+
+      chai.use(require('sinon-chai'));
+      test(chai, subject);
 
     }());
   } else {
     // Other environment (usually <script> tag): plug in to global chai instance directly.
     test(chai, false);
   }
-}(function(chai){
+})(function(chai, subject){
 
   var expect = chai.expect;
   var someGlobal = {};
@@ -42,4 +44,34 @@
       expect(someGlobal.someFunction()).to.equal("someGlobal's function");
     });
   });
+
+  if (subject) {
+    (function() {
+      var sinon = require('sinon');
+
+      describe("mocha-sinon on the backend", function() {
+        var sandbox;
+
+        beforeEach(function() {
+          sandbox = sinon.sandbox.create();
+        });
+
+        afterEach(function(){
+          sandbox.restore();
+        });
+
+        it("exports a function to register beforeEach/afterEach", function() {
+          sandbox.spy(global, 'beforeEach');
+          sandbox.spy(global, 'afterEach');
+
+          expect(subject).to.be.a('function');
+
+          subject();
+
+          expect(global.beforeEach).to.have.been.called;
+          expect(global.afterEach).to.have.been.called;
+        });
+      });
+    })();
+  }
 }));
