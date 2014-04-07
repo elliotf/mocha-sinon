@@ -21,10 +21,10 @@
     "chai": "~1",
     "mocha": "~1",
     "sinon": "~1",
-    "mocha-phantomjs": "^3.3.2",
-    "phantomjs": "^1.9.7-3",
-    "chicken-little": "^0.1.2",
-    "sinon-chai": "^2.5.0"
+    "mocha-phantomjs": "~3.3.2",
+    "phantomjs": "~1.9.7-3",
+    "chicken-little": "~0.1.2",
+    "sinon-chai": "~2.5.0"
   },
   "peerDependencies": {
     "mocha": "~1",
