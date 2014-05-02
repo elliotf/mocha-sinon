@@ -11,7 +11,19 @@ function mochaSinon(sinon){
     }
   });
 
+  before(function() {
+    if (null == this.sinon) {
+      this.sinon = sinon.sandbox.create();
+    }
+  });
+
   afterEach(function() {
+    if (this.sinon && 'function' === typeof this.sinon.restore) {
+      this.sinon.restore();
+    }
+  });
+
+  after(function() {
     if (this.sinon && 'function' === typeof this.sinon.restore) {
       this.sinon.restore();
     }

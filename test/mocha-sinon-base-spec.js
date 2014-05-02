@@ -63,6 +63,8 @@
         it("exports a function to register beforeEach/afterEach", function() {
           sandbox.spy(global, 'beforeEach');
           sandbox.spy(global, 'afterEach');
+          sandbox.spy(global, 'before');
+          sandbox.spy(global, 'after');
 
           expect(subject).to.be.a('function');
 
@@ -70,6 +72,8 @@
 
           expect(global.beforeEach).to.have.been.called;
           expect(global.afterEach).to.have.been.called;
+          expect(global.before).to.have.been.called;
+          expect(global.after).to.have.been.called;
         });
       });
     })();
