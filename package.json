@@ -1,6 +1,6 @@
 {
   "name": "mocha-sinon",
-  "version": "1.1.3",
+  "version": "1.1.4",
   "keywords": [
     "mocha",
     "sinon",
@@ -19,7 +19,7 @@
   "license": "MIT",
   "devDependencies": {
     "chai": "~1",
-    "mocha": "~1",
+    "mocha": ">= 1.0.0 < 3.0.0",
     "sinon": "~1",
     "mocha-phantomjs": "~3.3.2",
     "phantomjs": "~1.9.7-3",
@@ -27,7 +27,7 @@
     "sinon-chai": "~2.5.0"
   },
   "peerDependencies": {
-    "mocha": "~1",
+    "mocha": ">= 1.0.0 < 3.0.0",
     "sinon": "~1"
   },
   "engines": {
