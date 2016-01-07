@@ -36,7 +36,7 @@ function mochaSinon(sinon){
     && typeof window.sinon === "object"
   ) {
     plugin(window.sinon);
-  } else if (typeof require === "function" && typeof window === 'undefined') {
+  } else if (typeof require === "function") {
     var sinon = require('sinon');
 
     module.exports = function () {
@@ -45,9 +45,8 @@ function mochaSinon(sinon){
 
     plugin(sinon);
   } else {
-    throw "This module loading schema is unsupported.  Pull requests are welcome!";
+    throw "We could not find sinon through a supported module loading technique.  Pull requests are welcome!";
   }
 })(mochaSinon);
 
 })();
-
