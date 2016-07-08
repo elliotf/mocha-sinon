@@ -6,7 +6,7 @@ clean:
 
 test:
 	./node_modules/.bin/mocha --recursive -R list
-	./node_modules/.bin/mocha-phantomjs -p ./node_modules/.bin/phantomjs ./test/index.html
+	./node_modules/.bin/phantomjs  ./node_modules/mocha-phantomjs-core/mocha-phantomjs-core.js ./test/index.html
 
 testwatch:
 	bash -c "make test; ./node_modules/.bin/chicken -c 'clear; make test' ."
