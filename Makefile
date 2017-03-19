@@ -9,6 +9,6 @@ test:
 	./node_modules/.bin/mocha-phantomjs -p ./node_modules/.bin/phantomjs ./test/index.html
 
 testwatch:
-	bash -c "make test; ./node_modules/.bin/chicken -c 'clear; make test' ."
+	bash -c "./node_modules/.bin/nodemon -e js,json,yaml --exec bash -c 'make test; date' ."
 
 .PHONY: clean install test testwatch

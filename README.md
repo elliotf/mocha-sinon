@@ -85,13 +85,13 @@ describe('a shell command', function(){
 This module is stupidly simple.  You can do it yourself with:
 
 ```javascript
-var sinon = require('sinon');
+// require sinon somehow and in your test helper, do:
 
 beforeEach(function() {
-  this.sinon = sinon.sandbox.create();
-});
-
-afterEach(function(){
-  this.sinon.restore();
+  if (null == this.sinon) {
+    this.sinon = sinon.sandbox.create();
+  } else {
+    this.sinon.restore();
+  }
 });
 ```

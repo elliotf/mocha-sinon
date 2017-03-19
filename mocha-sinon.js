@@ -8,23 +8,7 @@ function mochaSinon(sinon){
   beforeEach(function() {
     if (null == this.sinon) {
       this.sinon = sinon.sandbox.create();
-    }
-  });
-
-  before(function() {
-    if (null == this.sinon) {
-      this.sinon = sinon.sandbox.create();
-    }
-  });
-
-  afterEach(function() {
-    if (this.sinon && 'function' === typeof this.sinon.restore) {
-      this.sinon.restore();
-    }
-  });
-
-  after(function() {
-    if (this.sinon && 'function' === typeof this.sinon.restore) {
+    } else {
       this.sinon.restore();
     }
   });

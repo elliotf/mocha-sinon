@@ -1,10 +1,12 @@
 {
   "name": "mocha-sinon",
-  "version": "1.2.0",
+  "version": "2.0.0",
   "keywords": [
     "mocha",
     "sinon",
-    "spies"
+    "spies",
+    "testing",
+    "pollution"
   ],
   "description": "mocha integration for sinon",
   "main": "mocha-sinon.js",
@@ -21,9 +23,9 @@
     "chai": "*",
     "mocha": "*",
     "mocha-phantomjs": "*",
+    "nodemon": "*",
     "phantomjs-prebuilt": "*",
-    "sinon": "*",
-    "sinon-chai": "*"
+    "sinon": "*"
   },
   "engines": {
     "npm": ">1.2"
