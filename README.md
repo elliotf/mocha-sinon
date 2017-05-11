@@ -26,7 +26,7 @@ require('mocha-sinon');
 or, on your command line calling mocha:
 
 ```javascript
-$ mocha -R mocha-sinon test.js
+$ mocha -r mocha-sinon test.js
 ```
 
 #### Using mocha's flakey --watch flag
