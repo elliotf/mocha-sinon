@@ -7,7 +7,12 @@ function mochaSinon(sinon){
 
   beforeEach(function() {
     if (null == this.sinon) {
-      this.sinon = sinon.sandbox.create();
+      if (sinon.createSandbox) {
+        // Sinon 2+ (sinon.sandbox.create triggers a deprecation warning in Sinon 5)
+        this.sinon = sinon.createSandbox();
+      } else {
+        this.sinon = sinon.sandbox.create();
+      }
     } else {
       this.sinon.restore();
     }
