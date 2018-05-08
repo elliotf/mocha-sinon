@@ -17,6 +17,13 @@ function mochaSinon(sinon){
       this.sinon.restore();
     }
   });
+
+  after(function() {
+    // avoid test pollution for the last test that runs
+    if (this.sinon) {
+      this.sinon.restore();
+    }
+  });
 }
 
 (function(plugin){
