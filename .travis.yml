@@ -1,6 +1,13 @@
 language: node_js
 node_js:
-  - "0.10"
-  - "0.12"
   - "4"
   - "6"
+  - "8"
+  - "10"
+matrix:
+  include:
+    - env: SINON=3 MOCHA=3
+    - env: SINON=4 MOCHA=4
+    - env: SINON=5 MOCHA=5
+before_install:
+  - npm install --save-dev sinon@${SINON} mocha@${MOCHA}
