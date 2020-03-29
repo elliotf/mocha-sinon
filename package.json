@@ -26,9 +26,7 @@
   "devDependencies": {
     "chai": "*",
     "mocha": "*",
-    "mocha-phantomjs": "*",
     "nodemon": "*",
-    "phantomjs-prebuilt": "*",
     "sinon": "*"
   },
   "engines": {
