@@ -5,6 +5,22 @@ mocha-sinon
 
 Integration between mocha and sinon, allowing for automatic cleanup of spies
 
+## What you should do instead of using this module
+
+This module is stupidly simple.  You can do it yourself and have one fewer dependency with:
+
+```javascript
+// require sinon somehow and in your test helper, do:
+
+beforeEach(function() {
+  if (null == this.sinon) {
+    this.sinon = sinon.sandbox.create();
+  } else {
+    this.sinon.restore();
+  }
+});
+```
+
 ## Installation
 
 via npm:
@@ -21,12 +37,6 @@ Require it somewhere in your spec helper file (easier, better)
 
 ```javascript
 require('mocha-sinon');
-```
-
-or, on your command line calling mocha:
-
-```javascript
-$ mocha -r mocha-sinon test.js
 ```
 
 #### Using mocha's flakey --watch flag
@@ -77,21 +87,5 @@ describe('a shell command', function(){
       expect(child_process.spawn).to.have.been.calledWith('/usr/bin/env', ['rm', '-rf', '/']);
     });
   });
-});
-```
-
-## If you don't like this module
-
-This module is stupidly simple.  You can do it yourself with:
-
-```javascript
-// require sinon somehow and in your test helper, do:
-
-beforeEach(function() {
-  if (null == this.sinon) {
-    this.sinon = sinon.sandbox.create();
-  } else {
-    this.sinon.restore();
-  }
 });
 ```
